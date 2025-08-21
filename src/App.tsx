@@ -1,10 +1,11 @@
 import './App.css'
+import Header from './components/header'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-xl'>Pixelar</h1>
+      <Header/>
     </>
   )
 }
