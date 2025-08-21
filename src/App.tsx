@@ -1,10 +1,11 @@
 import './App.css'
+import PortfolioGrid from './components/PortfolioGrid'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-xl'>Pixelar</h1>
+      <PortfolioGrid />
     </>
   )
 }
