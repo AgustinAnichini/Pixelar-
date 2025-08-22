@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
-:root{
-  --primary-color: #27527C;
-  --secondary-color: #f18425;
-  --background-color: #E0F0FF;
-  --text-color: #111827;
+:root {
+  --primary-color: #0D47A1;
+  --secondary-color: #448AFF;
+  --background-color: #ECEFF1;
 }
 
 h1 {
@@ -14,4 +13,13 @@ h1 {
 
 p{
   font-family: 'Poppins', sans-serif;
+}
+
+.btn-init{
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-init:hover {
+  background-color: var(--primary-color);
 }

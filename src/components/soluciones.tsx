@@ -2,7 +2,7 @@ export default function Soluciones(){
 
     return(
         <>
-            <div className="flex flex-col md:flex-row items-start justify-between p-20 gap-10 bg-blue-100">
+            <div className="flex flex-col md:flex-row items-start justify-between p-20 gap-10 " style={{ backgroundColor: 'var(--background-color)' }}>
                 <div className="md:w-1/2">
                     <h1 className="pb-5 text-4xl font-semibold">Soluciones Digitales a Medida.</h1>
                     <p className="text-sm">
