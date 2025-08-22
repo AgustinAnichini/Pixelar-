@@ -2,7 +2,7 @@ export default function Header() {
     
     return (
         <>
-            <nav className="flex justify-between items-baseline bg-white-800 text-white p-5 shadow-md">
+            <nav className="flex justify-between items-baseline bg-white text-white p-5 shadow-md sticky top-0 z-50">
                 <div className="flex items-center pl-20">
                     <h1 className="text-black text-2xl">Pixelar</h1>
                 </div>

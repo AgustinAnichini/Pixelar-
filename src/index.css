@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
-h1, p, label {
+:root{
+  --primary-color: #27527C;
+  --secondary-color: #f18425;
+  --background-color: #E0F0FF;
+  --text-color: #111827;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+}
+
+p{
   font-family: 'Poppins', sans-serif;
 }
