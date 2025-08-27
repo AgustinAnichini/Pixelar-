@@ -1,8 +1,8 @@
 export default function SobreNosotros() {
   return (
-    <section className="w-full py-16 sm:py-20">
+    <section className="w-full">
       {/* Grid full width */}
-      <div className="grid w-full overflow-hidden  shadow-xl ring-1 ring-black/10 md:grid-cols-2">
+      <div className="grid w-full overflow-hidden shadow-xl ring-1 ring-black/10 md:grid-cols-2">
         {/* Columna izquierda - Texto */}
         <div className="relative bg-orange-600 text-white flex items-center">
           {/* Decoración difusa */}
