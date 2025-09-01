@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --primary-color: #0D47A1;
   --secondary-color: #448AFF;
@@ -26,4 +30,51 @@ p{
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: var(--primary-color, #007bff);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s, transform 0.3s ease;
+  opacity: 1;
+}
+
+
+.scroll-to-top-button.hide {
+  opacity: 0;
+  pointer-events: none;
 }
