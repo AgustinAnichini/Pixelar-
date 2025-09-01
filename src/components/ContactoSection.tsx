@@ -24,7 +24,7 @@ export default function ContactoSection() {
   }
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full" id="contacto">
       {/* Fondo */}
       <div className="absolute inset-0 -z-10">
         <img

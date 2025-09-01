@@ -1,6 +1,6 @@
 export default function SobreNosotros() {
   return (
-    <section className="w-full">
+    <section className="w-full" id="nosotros">
       {/* Grid full width */}
       <div className="grid w-full overflow-hidden shadow-xl ring-1 ring-black/10 md:grid-cols-2">
         {/* Columna izquierda - Texto */}

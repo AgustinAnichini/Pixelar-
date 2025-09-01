@@ -2,7 +2,7 @@ export default function Servicios() {
 
     return(
         <>
-            <div className="flex flex-col md:flex-row min-h-screen">
+            <div id="servicios" className="flex flex-col md:flex-row min-h-screen">
                 <div className="md:w-1/2 relative">
                     <img
                     src={'./servicios.avif'}

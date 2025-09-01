@@ -23,3 +23,7 @@ p{
 .btn-init:hover {
   background-color: var(--primary-color);
 }
+
+html {
+  scroll-behavior: smooth;
+}

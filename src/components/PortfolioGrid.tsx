@@ -18,6 +18,7 @@ function ProjectCard({ project }: { project: Project }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.35 }}
       className="group relative overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md"
+      id="proyectos"
     >
       <div className="relative">
         <img

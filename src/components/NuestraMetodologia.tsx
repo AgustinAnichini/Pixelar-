@@ -35,7 +35,7 @@ const STEPS: Step[] = [
 
 export default function NuestraMetodologia() {
   return (
-    <section className="w-full bg-orange-50 py-16 sm:py-20">
+    <section className="w-full bg-orange-50 py-16 sm:py-20" id="metodologia">
       {/* Header */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
