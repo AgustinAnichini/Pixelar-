@@ -57,9 +57,11 @@ export default function Footer() {
           <div className="md:col-span-3">
             <div className="flex items-center gap-2">
               {/* logo simple (puedes reemplazar por <img src="/logo.svg" />) */}
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-600 text-white font-bold">
-                P
-              </div>
+              <img
+                src="/logo7.png"
+                alt="Pixelar Logo"
+                className="h-8 w-auto object-contain"
+              />
               <span className="text-xl font-semibold tracking-tight">Pixelar</span>
             </div>
 

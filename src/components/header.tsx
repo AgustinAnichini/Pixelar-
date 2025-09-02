@@ -48,20 +48,18 @@ export default function Header() {
   return (
     <header className={`${base} ${scrolled ? solid : transparent}`}>
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
+        {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <span
-            className={`text-2xl font-semibold tracking-tight ${
-              scrolled ? "text-slate-900" : "text-white"
-            }`}
-          >
-            Pixelar
-          </span>
-          <span
-            className={`h-2 w-2 rounded-full ${
-              scrolled ? "bg-slate-900" : "bg-white"
-            }`}
-            aria-hidden
+          <img
+            src="/logo7.png"
+            alt="Pixelar Logo"
+            className="h-8 w-auto object-contain"
           />
+          {/* <span
+            className={`h-2 w-2 rounded-full ${scrolled ? "bg-slate-900" : "bg-white"
+              }`}
+            aria-hidden
+          /> */}
         </a>
 
         {/* Desktop nav */}
@@ -72,11 +70,10 @@ export default function Header() {
                 <a
                   href={l.href}
                   onClick={(e) => handleNav(e, l.href)}
-                  className={`${linkBase} ${linkHover} ${underline} ${
-                    scrolled
+                  className={`${linkBase} ${linkHover} ${underline} ${scrolled
                       ? "text-slate-700 hover:text-slate-900"
                       : "text-white/90 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {l.label}
                 </a>
@@ -95,11 +92,10 @@ export default function Header() {
 
         {/* Mobile button */}
         <button
-          className={`md:hidden rounded-lg p-2 transition-colors ${
-            scrolled
+          className={`md:hidden rounded-lg p-2 transition-colors ${scrolled
               ? "text-slate-900 hover:bg-slate-100"
               : "text-white/90 hover:bg-white/10"
-          }`}
+            }`}
           aria-label="Abrir menú"
           onClick={() => setOpen((v) => !v)}
         >
@@ -109,9 +105,8 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          open ? "max-h-96" : "max-h-0"
-        } ${scrolled ? "bg-white/95 border-t border-slate-200" : "bg-black/60 backdrop-blur-sm"}`}
+        className={`md:hidden transition-all duration-300 overflow-hidden ${open ? "max-h-96" : "max-h-0"
+          } ${scrolled ? "bg-white/95 border-t border-slate-200" : "bg-black/60 backdrop-blur-sm"}`}
       >
         <ul className="space-y-1 px-5 py-4">
           {links.map((l) => (
@@ -119,11 +114,10 @@ export default function Header() {
               <a
                 href={l.href}
                 onClick={(e) => handleNav(e, l.href)}
-                className={`block rounded-lg px-3 py-2 text-sm font-medium ${
-                  scrolled
+                className={`block rounded-lg px-3 py-2 text-sm font-medium ${scrolled
                     ? "text-slate-800 hover:bg-slate-100"
                     : "text-white hover:bg-white/10"
-                }`}
+                  }`}
               >
                 {l.label}
               </a>
