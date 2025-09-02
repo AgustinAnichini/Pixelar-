@@ -1,20 +1,89 @@
-export default function Hero() {
+import { useCallback } from "react";
+import { ChevronDown } from "lucide-react";
 
-    return(
-        <>
-            <div className="relative w-full h-screen">
-                <img src="./hero.avif" alt="imagen hero" className="w-full h-screen object-cover object-center" />
-            <div className="absolute inset-0 bg-black opacity-50"></div></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">Creamos la Presencia Digital de tu Marca.</h1>
-                <p className="pb-3 font-light text-sm md:text-sm text-gray-300 mt-3">Diseñamos experiencias digitales atractivas y eficientes para que tu negocio crezca en el mundo online</p>
-                <a href="#soluciones" className="text-white py-3 px-6 rounded-md font-semibold transition duration-300 ease-in-out btn-init ">Conoce mas</a>
-            </div>
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                     <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M12 19l-7-7 1.414-1.414L12 16.172l5.586-5.586L19 12l-7 7z" />
-                </svg>
-            </div>
-        </>
-    )
+export default function Hero() {
+  const scrollTo = useCallback((id: string) => {
+    const el = document.getElementById(id.replace("#", ""));
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
+  return (
+    <section className="relative isolate h-[100vh] min-h-[560px] w-full">
+      {/* Imagen de fondo */}
+      <img
+        src="/pcManos.jpg"
+        alt="Diseño digital en laptop sobre escritorio"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+        fetchPriority="high"
+      />
+
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_40%,rgba(0,0,0,0)_0%,rgba(0,0,0,0.55)_100%)]" />
+
+      {/* Contenido centrado */}
+      <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center">
+        {/* Título */}
+        <h1 className="max-w-5xl text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white">
+          Diseño, Sitios Web y Apps <span className="whitespace-nowrap">(iOS &amp; Android)</span> que impulsan tu marca.
+        </h1>
+
+        {/* Párrafo con glow naranja */}
+        <p
+          className="mt-6 max-w-3xl text-sm md:text-base font-medium text-white leading-relaxed
+                     drop-shadow-[0_0_14px_rgba(234,88,12,0.85)]"
+        >
+          Creamos identidades y productos digitales de alto rendimiento:{" "}
+          <span className="font-semibold">websites a medida, e-commerce y aplicaciones móviles nativas/híbridas.</span>{" "}
+          Enfocados en <span className="font-semibold">UX, velocidad y conversión</span> para hacer crecer tu negocio.
+        </p>
+
+        {/* Botones (zona amarilla) */}
+        <div className="mt-20 flex flex-wrap items-center justify-center gap-4">
+          <button
+            onClick={() => scrollTo("#soluciones")}
+            className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-transform duration-200 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(0,0,0,0.28)] active:scale-[0.98]"
+          >
+            Conocé más
+          </button>
+
+          <button
+            onClick={() => scrollTo("#contacto")}
+            className="rounded-xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition-colors hover:bg-white/20"
+          >
+            Hablemos
+          </button>
+        </div>
+      </div>
+
+      {/* Chips estilo pill (zona roja, anclados abajo) */}
+      <ul className="absolute bottom-36 left-1/2 z-10 -translate-x-1/2 flex flex-wrap items-center justify-center gap-3 text-xs text-white/80 px-6">
+        {[
+          "Performance & SEO técnico",
+          "UX/UI moderno",
+          "Implementación ágil",
+          "Apps iOS & Android",
+        ].map((item) => (
+          <li
+            key={item}
+            className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium backdrop-blur-sm transition hover:bg-white/10"
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      {/* Scroll cue */}
+      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2">
+        <button
+          aria-label="Ir a la siguiente sección"
+          onClick={() => scrollTo("#soluciones")}
+          className="group relative grid h-12 w-12 place-items-center rounded-full border border-white/30 bg-white/10 backdrop-blur-md transition hover:bg-white/20"
+        >
+          <ChevronDown className="h-6 w-6 text-white transition-transform group-hover:translate-y-0.5" />
+          <span className="absolute inset-0 rounded-full ring-2 ring-white/25 animate-ping" />
+        </button>
+      </div>
+    </section>
+  );
 }
