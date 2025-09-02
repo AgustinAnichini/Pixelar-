@@ -53,7 +53,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <ul className="absolute bottom-36 left-1/2 z-10 -translate-x-1/2 flex flex-wrap items-center justify-center gap-3 text-xs text-white/80 px-6">
+      {/* <ul className="absolute bottom-24 left-1/2 z-10 -translate-x-1/2 flex flex-wrap items-center justify-center gap-3 text-xs text-white/80 px-6">
         {[
           "Performance & SEO técnico",
           "UX/UI moderno",
@@ -67,7 +67,7 @@ export default function Hero() {
             {item}
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {/* Scroll cue */}
       <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2">
