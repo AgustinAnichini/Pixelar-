@@ -1,11 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Send } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 export default function ContactoSection() {
-  const [status, setStatus] = useState<"idle" | "ok" | "error">("idle");
+  const [status, setStatus] = useState("idle");
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setIsLoading(true);
+
     const form = new FormData(e.currentTarget);
     const nombre = String(form.get("nombre") || "");
     const correo = String(form.get("correo") || "");
@@ -14,13 +18,36 @@ export default function ContactoSection() {
 
     if (!nombre || !correo || !mensaje) {
       setStatus("error");
+      setIsLoading(false);
       return;
     }
-    // acá podrías llamar a tu API / Email / Formspree / Resend / etc.
-    console.log({ nombre, correo, telefono, mensaje });
-    setStatus("ok");
-    (e.target as HTMLFormElement).reset();
-    setTimeout(() => setStatus("idle"), 3000);
+
+    emailjs.send(
+        'service_3b6tjkc', 
+        'template_nc4id2g', 
+        {
+            from_name: nombre,
+            from_email: correo,
+            from_phone: telefono,
+            message: mensaje,
+        },
+        'voQjy3qd8vH-irSiK'
+      )
+      .then(
+        (result) => {
+          console.log('Mensaje enviado:', result.text);
+          setStatus("ok");
+          (e.target as HTMLFormElement).reset();
+        },
+        (error) => {
+          console.error('Error al enviar el mensaje:', error);
+          setStatus("error");
+        }
+      )
+      .finally(() => {
+        setIsLoading(false);
+        setTimeout(() => setStatus("idle"), 5000);
+      });
   }
 
   return (
@@ -28,8 +55,8 @@ export default function ContactoSection() {
       {/* Fondo */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="/pcManos.jpg" // 👉 poné tu imagen en /public/contact-bg.jpg
-          alt=""
+          src="/pcManos.jpg" 
+          alt="Persona trabajando en un computador"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-slate-900/70" />
@@ -57,7 +84,7 @@ export default function ContactoSection() {
           )}
           {status === "error" && (
             <div className="mb-6 rounded-xl bg-red-500/15 px-4 py-3 text-red-200 ring-1 ring-red-400/30">
-              Completá al menos nombre, correo y mensaje.
+              Ocurrió un error al enviar el mensaje. Intenta de nuevo.
             </div>
           )}
 
@@ -123,10 +150,21 @@ export default function ContactoSection() {
             <div className="md:col-span-2">
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-orange-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-600/20 transition hover:-translate-y-0.5 hover:bg-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                disabled={isLoading}
+                className={`inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-white shadow-lg shadow-orange-600/20 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 ${
+                  isLoading
+                    ? "cursor-not-allowed bg-gray-500"
+                    : "bg-orange-600 hover:-translate-y-0.5 hover:bg-orange-500"
+                }`}
               >
-                <Send size={18} />
-                Enviar mensaje
+                {isLoading ? (
+                  "Enviando..."
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Enviar mensaje
+                  </>
+                )}
               </button>
             </div>
           </form>
