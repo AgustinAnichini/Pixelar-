@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="relative isolate h-[100vh] min-h-[560px] w-full">
-      {/* Imagen de fondo */}
+
       <img
         src="/pcManos.jpg"
         alt="Diseño digital en laptop sobre escritorio"
@@ -21,14 +21,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_40%,rgba(0,0,0,0)_0%,rgba(0,0,0,0.55)_100%)]" />
 
-      {/* Contenido centrado */}
       <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center">
-        {/* Título */}
+
         <h1 className="max-w-5xl text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white">
           Diseño, Sitios Web y Apps <span className="whitespace-nowrap">(iOS &amp; Android)</span> que impulsan tu marca.
         </h1>
 
-        {/* Párrafo con glow naranja */}
         <p
           className="mt-6 max-w-3xl text-sm md:text-base font-medium text-white leading-relaxed
                      drop-shadow-[0_0_14px_rgba(234,88,12,0.85)]"
@@ -38,7 +36,6 @@ export default function Hero() {
           Enfocados en <span className="font-semibold">UX, velocidad y conversión</span> para hacer crecer tu negocio.
         </p>
 
-        {/* Botones (zona amarilla) */}
         <div className="mt-20 flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={() => scrollTo("#soluciones")}
@@ -56,7 +53,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Chips estilo pill (zona roja, anclados abajo) */}
       <ul className="absolute bottom-36 left-1/2 z-10 -translate-x-1/2 flex flex-wrap items-center justify-center gap-3 text-xs text-white/80 px-6">
         {[
           "Performance & SEO técnico",

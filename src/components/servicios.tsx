@@ -4,7 +4,6 @@ import { PenTool, MonitorSmartphone, Component, SearchCheck, CheckCircle2 } from
 export default function Servicios() {
     return (
         <section id="servicios" className="flex flex-col md:flex-row min-h-[90vh]">
-            {/* Columna imagen */}
             <div className="relative md:w-1/2 h-[48vh] md:h-auto">
                 <img
                     src="/servicios.avif"
@@ -12,7 +11,6 @@ export default function Servicios() {
                     className="absolute inset-0 h-full w-full object-cover object-center"
                     fetchPriority="high"
                 />
-                {/* Vignette + degradado hacia la derecha para integrar con el panel */}
                 <div className="absolute inset-0 bg-black/35" />
                 <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-black/20 to-transparent" />
             </div>
@@ -108,7 +106,6 @@ function ServicioItem({
                 <p className="text-lg font-semibold">{title}</p>
                 <p className="mt-1 text-sm text-white/80">{desc}</p>
             </div>
-            {/* subrayado sutil al hover */}
             <span className="pointer-events-none absolute -bottom-[1px] left-0 right-0 h-px origin-left scale-x-0 bg-white/50 transition-transform duration-300 group-hover:scale-x-100" />
         </li>
     );

@@ -8,15 +8,13 @@ export default function Soluciones() {
       className="relative overflow-hidden"
       style={{ backgroundColor: "var(--background-color)" }}
     >
-      {/* Decoración sutil */}
       <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-white/40 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-white/30 blur-3xl" />
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-20 md:grid-cols-2 md:px-10 lg:gap-16">
-        {/* Columna texto */}
         <div>
           <Fade cascade duration={500} triggerOnce>
-            {/* Eyebrow */}
+
             <span className="inline-flex items-center gap-2 rounded-full border border-slate-300/40 bg-white/60 px-3 py-1 text-xs font-medium text-slate-700 backdrop-blur">
               Soluciones a Medida
             </span>
@@ -152,7 +150,6 @@ export default function Soluciones() {
             </figure>
           </Slide>
 
-          {/* Mini-contendedores compactos (reemplazan los 3 anteriores) */}
           <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
             <MiniPill icon={<Timer className="h-4 w-4" />} title="Tiempos ágiles" />
             <MiniPill icon={<Rocket className="h-4 w-4" />} title="Ready to launch" />

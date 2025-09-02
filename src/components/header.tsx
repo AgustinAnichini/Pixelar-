@@ -48,7 +48,6 @@ export default function Header() {
   return (
     <header className={`${base} ${scrolled ? solid : transparent}`}>
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        {/* Logo */}
         <a href="#" className="flex items-center gap-2">
           <span
             className={`text-2xl font-semibold tracking-tight ${
@@ -133,7 +132,6 @@ export default function Header() {
         </ul>
       </div>
 
-      {/* Keyframes */}
       <style>{`
         @keyframes sheen {
           0% { transform: translateX(-150%) skewX(-15deg); opacity: 0; }
@@ -183,7 +181,6 @@ function ContactCTA({
     >
       <span className="relative z-[1]">Contacto</span>
 
-      {/* Sheen */}
       <span
         className="anim-sheen pointer-events-none absolute inset-0 overflow-hidden rounded-xl"
         aria-hidden="true"
