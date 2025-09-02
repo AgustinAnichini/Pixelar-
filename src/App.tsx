@@ -1,4 +1,5 @@
 import './App.css'
+import 'devicon/devicon.min.css';
 import Header from './components/header'
 import Hero from './components/hero'
 import Soluciones from './components/soluciones'
@@ -9,6 +10,7 @@ import NuestraMetodologia from './components/NuestraMetodologia'
 import PortfolioGrid from './components/PortfolioGrid'
 import SobreNosotros from './components/SobreNosotros'
 import { useEffect, useState } from 'react'
+import TechSlider from './components/TechSlider';
 
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
       <Soluciones/>
       <Servicios/>
       <PortfolioGrid />
+      <TechSlider />
       <SobreNosotros />
       <NuestraMetodologia />
       <ContactoSection />
